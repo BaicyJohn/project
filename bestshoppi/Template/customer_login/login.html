@@ -1,0 +1,58 @@
+{% load static %}
+<html>
+    <head>
+        <h1><center>LOGIN</center></h1>
+        {% include "header.html" %}
+    </head>
+    <body>
+     {% if messages %}
+<ul>
+	{% for message in messages %}
+	  <script>
+    alert('{{ message }}');
+</script>
+	{% endfor %}
+</ul>
+{% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+    <table align=center>
+        <tr>
+            <td>
+                Username:
+            </td>
+            <td>
+                {{ form.username }}
+            </td>
+        </tr>
+        <tr>
+             <td>
+                password:
+            </td>
+            <td>
+                {{ form.password }}
+            </td>
+        </tr>
+        <tr >
+            <td>
+                
+            </td>
+            <td> 
+                <button type="submit">Login</button>
+           
+                </td>
+            <tr>
+    </tr>
+        <tr>
+        </tr>
+
+        <tr>
+        </tr>
+        </tr>
+    </table>
+
+        </form>
+        </body>
+{% include "footer.html" %}
+</html>

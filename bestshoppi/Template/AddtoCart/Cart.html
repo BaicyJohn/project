@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h3 align="center"><font color="#03A9F4">MY CART</font></h3>
+</head>
+<body>
+<form method="post">
+        {% csrf_token %}
+<table align="center" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+
+    {% for obj in data %}
+
+
+
+        <tr style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+
+
+            <td width="180"><h5 align="center"><font size="3"> {{ obj.ProductName }}</font></h5></td>
+                    <td width="180"><h5 align="center"><font size="3" color="#FFC10"> {{ obj.no_item }}</font></h5></td>
+            <td width="180"><h5 align="center"><font size="3" color="#FFC10">Rs. {{ obj.total }}</font></h5></td>
+            <td><a href="{% url 'cart:delete_item' pk=obj.id %}">delete</a></td>
+
+
+
+
+
+        </tr>
+
+
+
+
+
+
+    {% endfor %}
+    <tr>
+        <td></td>
+
+
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>
+
+        </td>
+    </tr>
+    <tr>
+
+      <td>
+
+              <!-- <button type="submit" onclick="{% url 'checkout:Checkout' %}">Checkout</button></td>-->
+         <td>
+             <font color="#03A9F4">
+            Total Items:
+
+
+            {{ item.item }}
+             </font>
+        </td>
+         <td>
+            <font color="#03A9F4">
+            Grand Total:
+
+
+            {{ d.Grand_Total }}
+            </font>
+        </td>
+    </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <tr>
+             <td>Sl_no:</td>
+             <td>Product Id</td>
+             <td>Product name</td>
+             <td>description</td>
+             <td>price</td>
+             <td>image</td>
+
+
+         </tr>
+         {% for obj in data %}
+         <tr>
+             <td>{{ forloop.counter }}</td>
+             <td>{{ obj.id }}</td>
+             <td>{{ obj.product_name }}</td>
+             <td>{{ obj.product_description }}</td>
+             <td>{{ obj.product_rate }}</td>
+             <td>{{ obj.product_image }}</td>
+             <td>ADD TO CART</td>
+
+
+         </tr>
+         {% endfor %}-->
+
+     </table>
+    <h3 align="center"><font color="#03A9F4">  <b><a href="{% url 'checkout:Checkout' %}" >Checkout</a></b></font></h3>
+</form>
+
+</body>
+</html>

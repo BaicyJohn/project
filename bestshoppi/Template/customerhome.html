@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Bootstrap E-commerce Templates</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+		<!-- bootstrap -->
+		<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+		<link href="{% static 'bootstrap/css/bootstrap-responsive.min.css' %}" rel="stylesheet">
+		<link href="{% static 'themes/css/bootstrappage.css' %}" rel="stylesheet"/>
+		
+		<!-- global styles -->
+		<link href="{% static 'themes/css/flexslider.css' %}" rel="stylesheet"/>
+		<link href="{% static 'themes/css/main.css" rel="stylesheet' %}"/>
+
+		<!-- scripts -->
+		<script src="{% static 'themes/js/jquery-1.7.2.min.js' %}"></script>
+		<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'themes/js/superfish.js' %}"></script>
+		<script src="{% static 'themes/js/jquery.scrolltotop.js' %}"></script>
+		<!--[if lt IE 9]>			
+			<script src="{% static 'http://html5shim.googlecode.com/svn/trunk/html5.js' %}"></script>
+			<script src="{% static 'js/respond.min.js' %}"></script>
+		<![endif]-->
+	</head>
+    <body>		
+		<div id="top-bar" class="container">
+			<div class="row">
+				<div class="span4">
+					
+				</div>
+				<div class="span8">
+					
+				</div>
+			</div>
+		</div>
+		<div id="wrapper" class="container">
+			<section class="navbar main-menu">
+				<div class="navbar-inner main-menu">				
+					
+					<nav id="menu" class="pull-right">
+						<ul>
+							<li><a href="{% url 'customerprofile:edit_profile' %}">My Profile</a></li>
+                            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+							<li><a href="{% url 'productlist:listProduct' %}">Buy Products</a></li>
+							<li><a href="{% url 'productfeedback:FeedbackForm' %}">Feedback</a>
+								
+							</li>							
+							<li><a href="{% url 'productfeedback:FeedbackForm' %}">About Us</a></li>
+							<li><a href="{% url 'productfeedback:FeedbackForm' %}">Contact</a></li>
+							<li><a href="{% url 'productfeedback:FeedbackForm' %}"Logout</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>				
+			
+			<section class="main-content">
+				<div class="row">
+					<div class="span12">
+						<div class="accordion" id="accordion2">
+							<div class="accordion-group">
+								<div class="accordion-heading">
+                                   
+								</div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </section>
+        </div>
+    </body>
+</html>

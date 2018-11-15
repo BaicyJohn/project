@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+ <table cellpadding="7" align="center" bgcolor="#FAFAFA" width="45%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+">
+            <%
+               
+                String update="update tbl_cart set Cart_status='1' where where Cart_id='"+session.getAttribute("buyid")+"'";
+                boolean b=obj.executeCommand(update);
+                 if(b==true)
+               {
+                  
+               }             
+                else
+               {
+                   out.println("Not Success");
+                   
+               }
+                   
+           String sel="select * from tbl_cart c inner join tbl_item i on c.Item_id=i.Item_id where Cart_id='"+session.getAttribute("buyid")+"'";
+           ResultSet rs=obj.selectCommand(sel);
+           if(rs.next()){
+            String name=rs.getString("Cart_quantity");   
+           
+           
+           
+            %>
+            
+            <tr align="center">
+                <td colspan="2">
+                    <img src="../Company/ProductImage/<%=rs.getString("Item_image")%>" width="90" height="95" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                </td>
+                
+                <td colspan="3"  align="center">
+                    Name:<%=rs.getString("Item_name")%><br><br>
+                    Price:<%=rs.getString("Item_price")%><br><br>
+                  Discription:<%=rs.getString("Item_description")%>
+                </td>     
+            </tr>
+            <tr align="center">
+                <td>
+                    Total Quantity:<%=rs.getString("Cart_quantity")%>
+                </td>
+            </tr>
+            <tr align="center">
+                <td>
+                    Total Price:<%=rs.getString("Cart_unittotal")%>
+                </td>
+            </tr>
+              
+            <%
+            }
+            %>
+        </table >
+        <table align="center">
+            <tr>
+                <td>
+                <%=rs.getString("Cart_unittotal")%>   Payment Successfully
+                </td>
+            </tr>   
+        </table>
+               
+    </body>
+</html>

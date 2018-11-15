@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <h1><center> Company Category</center></h1></head>
+
+    <body>
+    <form method="post">
+        {% csrf_token %}
+        <table align=center>
+            <tr>
+                <td>
+                    category name:
+                </td>
+                <td>
+                    {{ form.category_name }}
+                </td>
+                <tr>
+                <td>
+                    category description:
+                </td>
+            <td>
+                {{ form.category_description }}
+            </td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td>
+                    <button type="submit">OK</button>
+                </td>
+            </tr>
+
+        </table>
+
+
+</form>
+     </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+        {% csrf_token %}
+<table  align="center" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+
+    {% for obj in data %}
+
+
+
+        <tr style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+
+            <td width="300" align="center" bgcolor="white" >
+                <img src="{{ obj.product_image.url }}" height="150" width="150" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)"></td>
+            <td></td>
+            <td width="180"><h5 align="center"><font size="3"> {{ obj.product_name }}</font></h5></td>
+                    <td width="180"><h5 align="center"><font size="3" color="#FFC10">$ {{ obj.product_rate }}</font></h5></td>
+                    <td width="180"><h5 align="center"><font color="#03A9F4">  <b><a href="{% url 'purchase:purchase' pk=obj.id %}" >Buy Now</a></b></font></h5></td>
+                        <td></td>
+                        <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+
+
+
+
+
+           <!-- <td width="180" align="center" bgcolor="white">
+                <img src=""{% static static_cdn/media_root/images_20.jpg" alt="My image"/>
+                <img src="{{ obj.product_image }}" alt="My image"/>
+             <img src="{{ obj.product_image }}" alt="My image"/>
+             </td>
+               <td><h5 align="center"><font size="3" color="#FFC10">${{ obj.product_rate }}</font></h5></td>
+               <td><font color="#03A9F4"> <b><a href="Category.jsp?itemid=<%=iid%>" style="text-decoration:none">Add to
+                cart</a></b></font>
+              </td>-->
+        </tr>
+
+
+
+
+
+    {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <tr>
+             <td>Sl_no:</td>
+             <td>Product Id</td>
+             <td>Product name</td>
+             <td>description</td>
+             <td>price</td>
+             <td>image</td>
+
+
+         </tr>
+         {% for obj in data %}
+         <tr>
+             <td>{{ forloop.counter }}</td>
+             <td>{{ obj.id }}</td>
+             <td>{{ obj.product_name }}</td>
+             <td>{{ obj.product_description }}</td>
+             <td>{{ obj.product_rate }}</td>
+             <td>{{ obj.product_image }}</td>
+             <td>ADD TO CART</td>
+
+
+         </tr>
+         {% endfor %}-->
+
+     </table>
+</form>
+
+</body>
+</html>

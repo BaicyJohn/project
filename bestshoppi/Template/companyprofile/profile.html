@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <h1><center>MY PROFILE</center>
+    </h1>
+
+    </head>
+    <body>
+     <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table align=center>
+
+
+             <tr>
+            <td>
+                Company Name:
+            </td>
+            <td>
+                {{ form.comp_name }}
+            </td>
+        </tr>
+            <tr>
+              <td>
+               Email id:
+             </td>
+             <td>
+                {{ form.email_id }}
+             </td>
+                </tr>
+            <tr>
+                <td>
+                Address :
+                 </td>
+                <td>
+                     {{ form.address }}
+                </td>
+                </tr>
+             <tr>
+                <td>
+                Licence proof:
+                 </td>
+                <td>
+                     {{ form.licence_proof }}
+                </td>
+                </tr>
+
+
+
+
+              <tr>
+            <td>
+                Image:
+            </td>
+            <td>
+                {{ form.comp_image }}
+            </td>
+        </tr>
+             <tr>
+            <td>
+               Company description:
+            </td>
+            <td>
+                {{ form.comp_decsription }}
+            </td>
+        </tr>
+
+    <tr>
+    <td>
+        Username:
+    </td>
+    <td>
+        {{ form.username }}
+    </td>
+</tr>
+        <tr>
+    <td>
+        password:
+    </td>
+    <td>
+        {{ form.password }}
+    </td>
+</tr>
+
+                 <tr>
+            <td>
+                District Name:
+            </td>
+            <td>
+                {{ form.district_id }}
+            </td>
+        </tr>
+
+             </tr>
+
+                 <tr>
+            <td>
+                Comapny category:
+            </td>
+            <td>
+                {{ form.companycat_id }}
+            </td>
+        </tr>
+                 <tr>
+            <td>
+                Subscription mode:
+            </td>
+            <td>
+                {{ form.subscriptioncat_id }}
+            </td>
+
+             <tr>
+            <td>
+
+            </td>
+            <td>
+                <input type="submit" value="update" name="sub">
+            </td>
+        </tr>
+        </table>
+
+     </form>
+    </body>
+</html>

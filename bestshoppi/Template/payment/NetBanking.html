@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <script>
+        
+       function redirect()
+       {
+           window.location="../purchase/FinalPage.jsp";
+       }
+    </script>
+    <body>
+       
+        <form>
+            
+           <table align="center" cellpadding="8" style=" box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+               <tr>
+                   <td colspan="2">
+                       
+                   
+               <img src="{% static 'img/download-png-image-online-banking-png-pic-536.png' %}">
+              </td>
+               </tr>
+               <tr>
+                <td colspan="2">
+                    <input type="radio" name="bank" value="HDFC"><img src="{% static 'img/HDFC_Bank.jpg' %}" width="15" height="15"> HDFC Bank
+                    <input type="radio" name="bank" value="ICIC"><img src="{% static 'img/ICIC_bank.png' %}" width="90" height="20">
+                    <input type="radio" name="bank" value="SBI"><img src="{% static 'img/SBI-logo.svg.png' %}" width="15" height="15"> State Bank Of India
+                    
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="radio" name="bank" value="SBI"> AXIS Bank 
+                    <input type="radio" name="bank" value="Kotak"> Kotak Mahindra Bank 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Other Banks
+                </td>
+                <td>
+                    <select name="ddl_bank" style="width: 200px">
+                        <option>...Select.....</option>
+                        <option>Indian Bank</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                    <td>UserName</td>
+                    <td>
+                        <input type="text" name="txtusername" style="width: 200px" required="">
+                        </td>
+                 </tr>
+                 <tr>
+                         <td>Password</td>
+                         <td>
+                             <input type="password" name="txtpwd" style="width: 200px" required="">
+                         </td>
+                     </tr>
+            <tr>
+                
+            
+            <td colspan="2" align="center">
+                <input type="button" name="submit" size="20" style="background-color:#81D4FA;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" value="PAY &#8377;" onclick="redirect()">
+                </td>
+            </tr>
+        </table>
+              </form>
+    </body>
+</html>

@@ -1,0 +1,90 @@
+
+
+
+
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <script>
+function check()
+{
+    if(document.getElementById('card').checked)
+    {
+        window.location.href='CardPayment.html';
+    }else if(document.getElementById('netbanking').checked)
+    {
+        window.location="../purchase/NetBanking.jsp";
+    }
+    else if(document.getElementById('cash').checked)
+    {
+        window.location="../purchase/FinalPage.jsp";
+    }
+  
+
+}
+
+</script>
+    <body>
+    {% if messages %}
+<ul>
+	{% for message in messages %}
+
+     <script>
+    alert('{{ message }}');
+</script>
+	{% endfor %}
+</ul>
+{% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <table cellpadding="7" align="center" bgcolor="#FAFAFA" width="45%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+
+            
+            <tr align="center">
+
+                
+                <td colspan="3"  align="center">
+                    OrderNo {{ order.orderno }}<br><br>
+                    Grand Total:Rs {{ d.Grand_Total }}<br><br>
+                  No of items: {{ item.item }}
+                </td>     
+            </tr>
+
+              
+
+        </table >
+               
+        <table align="center" bgcolor="#FAFAFA"  width="45%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+            <tr>
+                <td>
+                    <img src="{% static 'img/icon-benefitinvoicing-getpaid.png' %}" width="350" height="200">
+                </td>
+               <!-- <td>
+                    <input type="radio" name="method" value="1"  id="card">Credit/Debit/ATM Card<br><br>
+
+                    <input type="radio" name="method" value="2" id="netbanking">Net Banking<br><br>
+                   
+                    <input type="radio" name="method" value="3" id="cash">Cash On Delivery<br><br>
+                    <input type="submit" name="submit" size="20" style="background-color:#81D4FA;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)" value="PAY &#8377; {{ d.Grand_Total }}">
+                     <h3 align="center"><font color="#03A9F4">  <b><a href="{% url 'payment:Card' %}" >Pay &#8377; {{ d.Grand_Total }}</a></b></font></h3>
+                </td>-->
+                <td>
+                     <h3 align="center"><font color="#03A9F4">  <b><a href="payment/CardPayment1.html" >Credit/Debit/ATM Card</a></b></font></h3>
+                    <h3 align="center"><font color="#03A9F4">  <b><a href="{% url 'payment:Netbank' %}" >Net Banking</a></b></font></h3>
+                    <h3 align="center"><font color="#03A9F4">  <b><a href="{% url 'payment:Cash' %}" >Cash On Delivery</a></b></font></h3>
+
+                </td>
+                <td>
+                    {{ a }}
+                </td>
+            </tr>
+        </table>
+    </form>
+    </body>
+
+</html>

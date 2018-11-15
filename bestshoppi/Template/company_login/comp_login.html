@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <h1><center><Company Login</center></h1>
+
+</head>
+<body>
+ <form method="post">
+        {% csrf_token %}
+    <table align=center>
+        <tr>
+            <td>
+                Username:
+            </td>
+            <td>
+                {{ form.username }}
+            </td>
+        </tr>
+        <tr>
+             <td>
+                password:
+            </td>
+            <td>
+               {{ form.password }}
+            </td>
+        </tr>
+        <tr >
+            <td>
+
+            </td>
+            <td>
+                <button type="submit">Login</button>
+
+                </td>
+        </tr>
+    </table>
+        </form>
+
+</body>
+</html>

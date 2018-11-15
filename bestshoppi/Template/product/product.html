@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <h1> <center> Product</center></h1>
+
+</head>
+
+<body>
+{% if messages %}
+<ul>
+	{% for message in messages %}
+
+     <script>
+    alert('{{ message }}');
+</script>
+	{% endfor %}
+</ul>
+{% endif %}
+ <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+    <table align=center>
+        <tr>
+            <td>
+                Product Name:
+            </td>
+            <td>
+                {{ form.product_name }}
+            </td>
+        </tr>
+        <tr>
+             <td>
+                product description:
+            </td>
+            <td>
+                {{ form.product_description }}
+            </td>
+        </tr>
+         <tr>
+             <td>
+                Price:
+            </td>
+            <td>
+                {{ form.product_rate }}
+            </td>
+        </tr>
+         <tr>
+             <td>
+                Image:
+            </td>
+            <td>
+                {{ form.product_image }}
+            </td>
+        </tr>
+         <tr>
+             <td>
+                Product category
+            </td>
+            <td>
+                {{ form.productcat_id }}
+            </td>
+        </tr>
+
+         <tr>
+
+        </tr>
+        <tr >
+            <td>
+ {{ IDD }}
+            </td>
+            <td>
+               <input type="submit" name="submit" value="insert">
+
+                </td>
+
+
+        </tr>
+
+
+    </table>
+
+     <table align="center" border="1">
+         <tr>
+             <td>Sl_no:</td>
+             <td>Product Id</td>
+             <td>Product name</td>
+             <td>description</td>
+             <td>price</td>
+             <td>Edit/Delete</td>
+
+         </tr>
+         {% for obj in data %}
+         <tr>
+             <td>{{ forloop.counter }}</td>
+             <td>{{ obj.id }}</td>
+             <td>{{ obj.product_name }}</td>
+             <td>{{ obj.product_description }}</td>
+             <td>{{ obj.product_rate }}</td>
+             <td>{{ obj.product_image }}</td>
+             <td><a href="{% url 'products:edit_product' pk=obj.id %}">edit</a>
+                 <a href="{% url 'products:delete_product' pk=obj.id %}">delete</a>
+                 <a href="{% url 'quantity:QuantityForm' pk=obj.id  %}">add quantity</a>
+             </td>
+
+         </tr>
+         {% endfor %}
+
+     </table>
+
+        </form>
+
+</body>
+</html>

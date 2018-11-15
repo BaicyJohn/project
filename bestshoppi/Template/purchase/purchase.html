@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if messages %}
+<ul>
+	{% for message in messages %}
+
+     <script>
+    alert('{{ message }}');
+</script>
+	{% endfor %}
+</ul>
+{% endif %}
+<form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+    <table style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+<tr>
+    <h5 align="left"><font color="#03A9F4">  <b><a href="{% url 'productlist:listProduct' %}" >VIEW PRODUCTS</a></b></font></h5>
+    <h5 align="right"><font color="#03A9F4">  <b><a href="{% url 'cart:AddtoCart' %}" >MY CART</a></b></font></h5></tr>
+    <table align="center" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)" >
+
+            <tr style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)" >
+            <td width="300" align=center  bgcolor="white" >
+                <img  src="{{ data.product_image.url }}" height="150" width="150" align="center"  style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)"></td></tr>
+        <tr><td><h5 align="center"><font size="3"> {{ data.product_name }}</font></h5></td></tr></tr>
+        <tr><td><h5 align="center"><font size="3"> {{ data.product_description }}</font></h5></td></tr>
+              <tr><td><h5 align="center"><font size="3"> {{ data.productcat_id }}</font></h5></td></tr>
+        <tr><td><h5 align="center"><font size="3" color="#FFC10">$ {{ data.product_rate }}</font></h5></td></tr>
+        <tr><td><h5 align="center"><font size="3" color="#FFC10"> Available:{{ d.quantity }}</font></h5></td></tr>
+        <tr ><td><h5 align="cenTER"><font size="3" color="#FFC10"> Enter Quantity:{{ form.no_item }}</font></h5></td></tr>
+          </tr>
+         </tr>
+
+
+         </tr>
+
+
+
+
+    <td align="center"><button type="submit" >Add To Cart</button></td>
+
+
+
+
+
+
+   <!--     <tr>
+              <td>
+                Product Name:
+            </td>
+            <td>
+                {{ data.product_name }}
+            </td>
+        </tr>
+        <tr>
+             <td>
+                product description:
+            </td>
+            <td>
+                {{ data.product_description }}
+            </td>
+        </tr>
+         <tr>
+             <td>
+                Price:
+            </td>
+            <td>
+                {{ data.product_rate }}
+            </td>
+        </tr>
+         <tr>
+             <td>
+                Image:
+            </td>
+            <td>
+                {{ data.product_image }}
+            </td>
+        </tr>
+         <tr>
+             <td>
+                Product category
+            </td>
+            <td>
+                {{ data.productcat_id }}
+            </td>
+        </tr>-->
+    </table>
+    </table>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <h1><center> Customer Registeration</center></h1>
+          {% include "header.html" %}
+    </head>
+    <body>
+     {% if messages %}
+<ul>
+	{% for message in messages %}
+
+     <script>
+    alert('{{ message }}');
+</script>
+	{% endfor %}
+</ul>
+{% endif %}
+
+
+    <form action="." method="post">
+        {% csrf_token %}
+
+
+    <table align=center>
+        <tr>
+            <td>
+                Customername:
+            </td>
+            <td>
+                {{ form.name }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Gender:
+            </td>
+            <td>
+                {{ form.gender }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Date of birth:
+            </td>
+            <td>
+                {{ form.dob }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email:
+            </td>
+            <td>
+                {{ form.email }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+               Contact No:
+            </td>
+            <td>
+                {{ form.contactno }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+              Username:
+            </td>
+            <td>
+                {{ form.username }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                password:
+            </td>
+            <td>
+                <input type="password" {{ form.password }}>
+            </td>
+            </td>
+        </tr>
+         <tr>
+            <td>
+                Confirm password:
+            </td>
+            <td>
+               <input type="password" {{ form.confirm }}>
+            </td>
+        </tr>
+        <tr >
+            <td>
+                
+            </td>
+            <td> 
+               <button type="submit">Register</button>
+            
+                </td>
+        </tr>
+
+
+
+
+    </table>
+        </table>
+        </form>
+    </body>
+{% include "footer.html" %}
+</html>

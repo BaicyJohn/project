@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h3 align="center">Billing Details</h3>
+</head>
+<body>
+<form method="post">
+        {% csrf_token %}
+<table  align="center"style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)" >
+
+
+
+
+        <tr>
+
+
+
+            <td width="180"><h5 align="center"><font size="3"> CustomerID:{{ data.id }}</font></h5></td>
+    <td width="180"><h5 align="center"><font size="3"> Name:{{ data }}</font></h5></td>
+                    <td width="180"><h5 align="center"><font size="3" color="#FFC10">OrderNo {{ order.orderno }}</font></h5></td>
+            <td width="180"><h5 align="center"><font size="3" color="#FFC10">Grand Total: Rs {{ d.Grand_Total }}</font></h5></td>
+            <!--<td width="180"><h5 align="center"><font size="3" color="#FFC10">No of items: {{ ct.No_of_items }}</font></h5></td>-->
+            <td width="180"><h5 align="center"><font size="3" color="#FFC10">No of items: {{ item.item }}</font></h5></td>
+
+
+
+
+
+
+        </tr>
+    <tr></tr>
+    <tr></tr>
+</table>
+    <table align="center"style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+        <tr></tr>
+        <tr>
+
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+<tr>
+    <td>
+        Email ID:
+    </td>
+    <td>{{ form.Email }}</td>
+    <td></td>
+    <td><td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+
+</tr>
+        <tr></tr>
+    <tr>
+    <td>
+        Contact No:
+    </td>
+    <td>{{ form.contactno }}</td>
+
+
+
+<tr></tr>
+    <tr>
+    <td>
+        Address:
+    </td>
+    <td>{{ form.address }}</td>
+
+</tr>
+        <tr></tr>
+          <tr>
+    <td>
+        District:
+    </td>
+    <td>{{ form.district_id }}</td>
+
+</tr>
+        <tr></tr>
+        <tr></tr>
+
+
+
+         </tr>
+
+
+     </table>
+    <h3 align="center"><font color="#03A9F4">  <b><a href="{% url 'payment:Payment' %}" >Payment</a></b></font></h3>
+</form>
+
+</body>
+</html>
